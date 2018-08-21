@@ -17,12 +17,14 @@ var commentRoutes  = require("./routes/comments"),
     festivalRoutes = require("./routes/festivals"),
     indexRoutes    = require("./routes/index");
 
+// // Connect to local database useing mongoose using command line
+// mongoose.connect("mongodb://localhost/fest_hub");
 
-//Connect to local database useing mongoose
-//mongoose.connect("mongodb://localhost/fest_hub");
+// Connect to local database useing mongoose using gitbash
+mongoose.connect(process.env.DATABASEURL);
 
-//Connect to mongolab database
-mongoose.connect("mongodb://Dan:f3sthub@ds125342.mlab.com:25342/festhub");
+// //Connect to mongolab database
+// mongoose.connect("mongodb://Dan:f3sthub@ds125342.mlab.com:25342/festhub");
 
 //Configure app
 app.use(bodyParser.urlencoded({extended: true}));
