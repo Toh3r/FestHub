@@ -18,15 +18,18 @@ var commentRoutes  = require("./routes/comments"),
     indexRoutes    = require("./routes/index");
 
 
-//Connect to database useing mongoose
-mongoose.connect("mongodb://localhost/fest_hub");
+//Connect to local database useing mongoose
+//mongoose.connect("mongodb://localhost/fest_hub");
+
+//Connect to mongolab database
+mongoose.connect("mongodb://Dan:f3sthub@ds125342.mlab.com:25342/festhub");
 
 //Configure app
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 //Serve public directory
 app.use(express.static(__dirname + "/public"));
-//For put and delete routes
+//For put and delete routesmongodb://Dan:f3sthub@ds125342.mlab.com:25342/festhub
 app.use(methodOverride("_method"));
 //For flash messages
 app.use(flash());
