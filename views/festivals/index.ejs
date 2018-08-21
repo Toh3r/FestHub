@@ -1,0 +1,38 @@
+<% include ../partials/header%>
+
+<div class="container">
+	<!-- Create header, it's a container that works like a div -->
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Welcome To FestHub!</h1>
+			<p>View festivals around the world</p>
+			<p>
+				<!-- Link to add a festival -->
+				<a class="btn btn-primary btn-lg" href="/festivals/new">Add A New Festival</a>
+			</p>
+		</div>
+	</header>
+
+	<!-- bootstrap class text-center -->
+	<div class="row text-center" style="display: flex; flex-wrap: wrap;">
+		<!-- Loop through array and display festival names and images -->
+		<% festivals.forEach(function(festival){ %>
+			<div class="col-md-3 col-sm-6">
+				<!-- Bootstrap class thumbnail -->
+				<div class="thumbnail">
+					<img src="<%= festival.image %>">
+					<!-- Bootstrap class caption -->
+					<div class="caption">
+						<h4><%= festival.name%></h4>
+					</div>
+					<p>
+						<a href="/festivals/<%= festival._id %>" class="btn btn-primary">More Info</a>
+					</p>
+				</div>
+			</div>
+		<% }) %>
+	</div>
+
+</div>
+
+<% include ../partials/footer%>

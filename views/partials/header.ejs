@@ -1,0 +1,51 @@
+<!-- Create header for all .ejs pages -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FestHub</title>
+
+	<!-- link to bootstrap cdn -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Link to main(custom) stylesheet -->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+</head>
+<body>
+
+	<!-- Create navbar -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">FestHub</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<% if(!currentUser){ %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">Sign Up</a></li>
+					<% } else { %>
+						<li><a href="#">Signed In As <%= currentUser.username %></a></li>
+						<li><a href="/logout">Log Out</a></li>
+					<% } %>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- End of Navbar -->
+
+	<!-- === Flash messages === -->
+	<div class="container">
+		<!-- Display error alert if anything is in the error array -->
+		<% if(error && error.length > 0){ %>
+			<div class="alert alert-danger" role="alert">
+				<%= error %>
+			</div>
+		<% } %>
+		<!-- Display success alert if anything is in the error array -->
+		<% if(success && success.length > 0){ %>
+			<div class="alert alert-success" role="alert">
+				<%= success %>
+			</div>
+		<% } %>
+	</div>
+	
