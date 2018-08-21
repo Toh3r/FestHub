@@ -20,11 +20,9 @@ var commentRoutes  = require("./routes/comments"),
 // // Connect to local database useing mongoose using command line
 // mongoose.connect("mongodb://localhost/fest_hub");
 
+var url = process.env.DATABASEURL || "mongodb://localhost/fest_hub"
 // Connect to local database useing mongoose using gitbash
-mongoose.connect(process.env.DATABASEURL);
-
-// //Connect to mongolab database
-// mongoose.connect("mongodb://Dan:f3sthub@ds125342.mlab.com:25342/festhub");
+mongoose.connect(url);
 
 //Configure app
 app.use(bodyParser.urlencoded({extended: true}));
@@ -66,13 +64,7 @@ app.use("/", indexRoutes);
 app.use("/festivals", festivalRoutes);
 app.use("/festivals/:id/comments", commentRoutes);
 
-
-// //Listen on port 5000
-// app.listen("5000", function(){
-// 	console.log("The FestHub Server Has Started On Port 5000...");
-// });
-
-//For herokuapp
-app.listen(process.env.PORT || 8080, function(){
+//Listen on localhost 5000/herokuapp port
+app.listen(process.env.PORT || 5000, function(){
     console.log("Server started...")
 });
