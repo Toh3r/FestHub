@@ -65,7 +65,12 @@ app.use("/festivals", festivalRoutes);
 app.use("/festivals/:id/comments", commentRoutes);
 
 
-//Listen on port 5000
-app.listen("5000", function(){
-	console.log("The FestHub Server Has Started On Port 5000...");
+// //Listen on port 5000
+// app.listen("5000", function(){
+// 	console.log("The FestHub Server Has Started On Port 5000...");
+// });
+
+//For herokuapp
+app.listen(process.env.PORT || 8080, function(){
+    console.log("Server started...")
 });
