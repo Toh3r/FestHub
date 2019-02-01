@@ -8,11 +8,11 @@
 			<!-- Add sidebar heading -->
 			<p class="lead">FestHub</p>
 			<!-- Add some placeholder data -->
-			<div class="list-group">
+			<!-- <div class="list-group">
 				<li class="list-group-item active">Info 1</li>
 				<li class="list-group-item">Info 2</li>
 				<li class="list-group-item">Info 3</li>
-			</div>
+			</div> -->
 		</div>
 		<!-- Create main area of page -->
 		<div class="col-md-9">
@@ -53,7 +53,7 @@
 							<%= comment.text %>
 						</p>
 						<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
-							<a class="btn btn-xs btn-warning" 
+							<a class="btn btn-xs btn-warning"
 							   href="/festivals/<%= festival._id %>/comments/<%= comment._id %>/edit">
 							   Edit
 							</a>

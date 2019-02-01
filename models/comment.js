@@ -1,4 +1,4 @@
-//Import mongoose
+//Import mongoose //
 var mongoose = require("mongoose");
 
 //Create comment schema
