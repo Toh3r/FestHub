@@ -20,23 +20,24 @@ body {
   color: #fff;
 }
 
-.btn-success {
+.btn-black {
+	color: white;
 	background-color: black;
 	border: 5px double rgb(74, 58, 58);
 }
 
-.btn-success:hover {
+.btn-black:hover {
 	color: black;
 	background-color: white;
 	border: 5px double rgb(74, 58, 58);
 }
 
-.btn-success:active, .open>.dropdown-toggle.btn-success {
+.btn-black:active, .open>.dropdown-toggle.btn-success {
 	background-color: black;
 	border: 5px double rgb(74, 58, 58);
 }
 
-.btn-success:active:focus {
+.btn-black:active:focus {
 	background-color: black;
 	border: 5px double rgb(74, 58, 58);
 }

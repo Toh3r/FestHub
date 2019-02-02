@@ -9,7 +9,7 @@
 			<p class="lead">FestHub</p>
 			<!-- Add some placeholder data -->
 			<div class="list-group">
-				<li class="list-group-item active">This is</li>
+				<li class="list-group-item">This is</li>
 				<li class="list-group-item">Placeholder</li>
 				<li class="list-group-item">Text</li>
 			</div>
@@ -29,9 +29,9 @@
 						<em>Submitted by: <%= festival.author.username %></em>
 					</p>
 					<% if(currentUser && festival.author.id.equals(currentUser._id)){ %>
-						<a class="btn btn-xs btn-warning" href="/festivals/<%= festival._id %>/edit">Edit Festival</a>
+						<a class="btn btn-xs btn-black" href="/festivals/<%= festival._id %>/edit">Edit Festival</a>
 						<form class="delete-form" action="/festivals/<%= festival._id %>?_method=DELETE" method="POST">
-							<button class="btn btn-xs btn-danger">Delete Festival</button>
+							<button class="btn btn-xs btn-white">Delete Festival</button>
 						</form>
 					<% } %>
 				</div>
@@ -40,7 +40,7 @@
 			<div class="well">
 				<!-- Button to add a new comment -->
 				<div class="text-right">
-					<a class="btn btn-success" href="/festivals/<%= festival._id %>/comments/new">Add New Comment</a>
+					<a class="btn btn-black" href="/festivals/<%= festival._id %>/comments/new">Add New Comment</a>
 				</div>
 				<hr>
 				<!-- Loop through and display comments, create new row for each comment -->
@@ -53,12 +53,12 @@
 							<%= comment.text %>
 						</p>
 						<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
-							<a class="btn btn-xs btn-warning"
+							<a class="btn btn-xs btn-black"
 							   href="/festivals/<%= festival._id %>/comments/<%= comment._id %>/edit">
 							   Edit
 							</a>
 							<form class="delete-form" action="/festivals/<%= festival._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-								<input class="btn btn-xs btn-danger" type="submit" value="Delete">
+								<input class="btn btn-xs btn-white" type="submit" value="Delete">
 							</form>
 						<% } %>
 					</div>
